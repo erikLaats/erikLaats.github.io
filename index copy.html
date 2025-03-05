@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Jerk Driver Reporting System</title>
+    <style>
+        body {
+            font-family: cursive, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #response {
+            display: none;
+            margin-top: 20px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jerk Driver Reporting System</h1>
+    <form id="reportForm">
+        <label for="licensePlate">License Plate:</label>
+        <input type="text" id="licensePlate" name="licensePlate" required>
+        <label for="reason">Reason:</label>
+        <input type="text" id="reason" name="reason" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="response">
+        Thank you! We have emailed Larry David about your concern. 
+    </div>
+    <script>
+        document.getElementById('reportForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('response').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
+
