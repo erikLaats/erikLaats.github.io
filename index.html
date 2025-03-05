@@ -21,17 +21,21 @@
     <form id="reportForm">
         <label for="licensePlate">License Plate:</label>
         <input type="text" id="licensePlate" name="licensePlate" required>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
         <label for="reason">Reason:</label>
         <input type="text" id="reason" name="reason" required>
         <button type="submit">Submit</button>
     </form>
     <div id="response">
-        Thank you! We have emailed Larry David about your concern. 
+        Thank you! We have emailed Larry David about your concern, "<span id="reasonText"></span>". Can you believe someone would do that??
     </div>
     <script>
         document.getElementById('reportForm').addEventListener('submit', function(event) {
             event.preventDefault();
             document.getElementById('response').style.display = 'block';
+            document.getElementById('reportForm').style.display = 'none';
+            document.getElementById('reasonText').innerHTML = document.getElementById('reason').value;
         });
     </script>
 </body>
